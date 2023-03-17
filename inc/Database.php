@@ -1,6 +1,5 @@
 <?php
-require_once("/wamp64/www/php_exo5eurocom/root.php");
-require_once(SITE_ROOT . 'config/db_config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/.config/db_config.php');
 class Database
 {
     private $pdo;

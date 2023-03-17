@@ -86,7 +86,7 @@ function moveImage($image)
     }
 }
 
-require_once('Database.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/Database.php');
 
 // // ANCHOR insertion de données
 // // attention les array doivent avoir la même clé, donc utilisé les default key
@@ -217,18 +217,19 @@ function displayPosts($table)
         <div class="col-md-4 p-2">
                 <article class="shadow border border-secondary">
                     <div>
-                        <img src="" alt="image_du_post">
+                        <img class="img-fluid" src="upload/image/placeholder-photo.jpg" alt="image_du_post">
                     </div>
                     <div class="p-2">
                         <h3>' . $row['ms_titre'] . '</h3>
                         <p>' . $row['ms_contenu'] . '</p>
                         <span class="btn btn-light">À partir de <strong>' . $row['ms_prix'] . ' €</strong></span>
-                        <a class="link-secondary" href="./page/post.php?id=' . urlencode(base64_encode($row['ms_id'])) . '">En savoir plus</a>
+                        <a class="link-secondary" href="./page/post.php?id=' . $row['ms_id'] . '">En savoir plus</a>
                     </div>
                 </article>
             </div>
         ';
     endforeach;
+    // urlencode(base64_encode(
 }
 
 // ANCHOR Afficher l'en-tête de la table
@@ -287,7 +288,7 @@ function displayTable($table)
                         <?= $row['ms_prix'] ?>
                     </td>
                     <td scope="col text-center">
-                        <img src="<?= 'uploads/images/' . $row['ms_image'] ?>" alt="<?= substr($row['ms_contenu'], 0, 80) ?>" width="120">
+                        <img src="<?= '../upload/image/' . $row['ms_image'] ?>" alt="<?= substr($row['ms_contenu'], 0, 80) ?>" width="120">
                     </td>
                     <td scope="col">
                         <?= $row['user_id'] ?>

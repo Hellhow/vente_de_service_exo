@@ -1,8 +1,7 @@
 <?php
 // ANCHOR inc des données et fct
-require_once('../root.php');
-require_once(SITE_ROOT . 'inc/fct-inc.php');
-require_once(SITE_ROOT . 'inc/Database.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/fct-inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/Database.php');
 ?>
 <!DOCTYPE html>
 
@@ -21,30 +20,15 @@ require_once(SITE_ROOT . 'inc/Database.php');
 <html lang="FR-fr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="SIRJACQUES Vincent">
-    <meta name="copyright" content="SIRJACQUES Vincent">
-    <meta name="robots" content="index, follow">
-    <meta name="rating" content="general">
-
-    <!-- ANCHOR titre -->
-    <title>Exo vente de service</title>
-    <meta name="description" content="...">
-
-    <!-- ANCHOR icon de la page -->
-    <!-- <link rel="shortcut icon" href="..." type="image/x-icon"> -->
+    <?php
+    $mainTitle = 'Microservices - accueil';
+    include($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/head.php');
+    ?>
 
     <!-- SECTION CSS -->
-
-    <!-- ANCHOR CSS Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-    <!-- ANCHOR CSS framework -->
+    <!-- ANCHOR CSS framework Custom -->
     <!-- <link rel="stylesheet" href="css/1_reset.css"> -->
     <!-- <link rel="stylesheet" href="css/2_normalize.css"> -->
-    <link rel="stylesheet" href="../asset/bootstrap.css">
     <!-- <link rel="stylesheet" href="./css/mode.css"> -->
 
     <!-- ANCHOR CSS Custom-->
@@ -67,12 +51,15 @@ require_once(SITE_ROOT . 'inc/Database.php');
     ?>
         <!-- !SECTION php co -->
         <!-- SECTION header -->
-        <header>
-            <h1 class="text-center mt-1 mb-3">Microservices</h1>
-        </header>
+        <?php
+        $goRoot = '..';
+        $goDoc1 = '.';
+        include($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/header.php');
+        ?>
         <!-- !SECTION header -->
         <!-- SECTION main -->
         <main>
+            <h1 class="text-center mt-1 mb-3">Microservices</h1>
             <div class="container">
                 <div class="row">
                     <?php
@@ -83,8 +70,10 @@ require_once(SITE_ROOT . 'inc/Database.php');
         </main>
         <!-- !SECTION main -->
         <!-- SECTION footer -->
-        <footer>
-            <a class="btn btn-primary" href="../index.php">Accueil</a>
+        <footer class="container">
+            <div class="row">
+                <a class="btn btn-primary col-1" href="add-ms.php"><i class="bi bi-plus-square"></i> Ajouter</a>
+            </div>
         </footer>
         <!-- !SECTION footer -->
         <!-- SECTION php co erreur + déco -->

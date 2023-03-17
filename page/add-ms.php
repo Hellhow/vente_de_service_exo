@@ -1,8 +1,7 @@
 <?php
 
 // ANCHOR inc des données et fct
-require_once('../root.php');
-require_once(SITE_ROOT . 'inc/fct-inc.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/fct-inc.php');
 
 
 // var_dump($id);
@@ -22,16 +21,20 @@ if (!empty($id)) {
 <html lang="fr-FR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Microservices</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!-- FONTAWSOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <?php
+    $mainTitle = 'Microservice - add-ms';
+    include($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/head.php');
+    ?>
 </head>
 
 <body>
-
+    <!-- SECTION header -->
+    <?php
+    $goRoot = '..';
+    $goDoc1 = '.';
+    include($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/header.php');
+    ?>
+    <!-- !SECTION header -->
 
     <main class="container">
         <div class="row">

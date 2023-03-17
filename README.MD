@@ -1,6 +1,6 @@
 # Microservices
 
-Attention créer un fichier "config" à la racine du site contenant un fichier "db_config.php" avec le code suivant adapter à votre DataBase :
+Attention créer un fichier ".config" à la racine du site contenant un fichier "db_config.php" avec le code suivant adapter à votre DataBase :
 
 ```php
 <?php
