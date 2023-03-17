@@ -70,7 +70,7 @@ function moveImage($image)
             if (in_array($extension_upload, $extensions_autorisees)) {
                 echo "====> Extension Autorisée 👍<br>";
                 // On peut valider le fichier et le stocker définitivement
-                move_uploaded_file($image['tmp_name'], 'uploads/images/' . basename($image['name']));
+                move_uploaded_file($image['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/upload/image/' . basename($image['name']));
                 //  FIXME Attention la même image peut pas être téléversée 2 fois
                 echo "====> Téléversement de <strong>" . $image['name'] . "</strong> terminé 👍<br>";
                 return $image['name'];
@@ -217,7 +217,7 @@ function displayPosts($table)
         <div class="col-md-4 p-2">
                 <article class="shadow border border-secondary">
                     <div>
-                        <img class="img-fluid" src="upload/image/placeholder-photo.jpg" alt="image_du_post">
+                        <img class="img-fluid" src="upload/image/' . $row["ms_image"] . '" alt="image_du_post">
                     </div>
                     <div class="p-2">
                         <h3>' . $row['ms_titre'] . '</h3>

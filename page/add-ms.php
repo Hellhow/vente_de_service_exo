@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/php_exo5eurocom/inc/fct-inc.php');
 
 $id = isset($_GET["id"]) ? $_GET["id"] : NULL;
 if (!empty($id)) {
-    $data = getSingle('microservices', $id);
+    $data = getSingle('ms_prod', $id);
     $action = "UPDATE";
     $libelle = "Mettre a jour";
 } else {
@@ -42,7 +42,7 @@ if (!empty($id)) {
 
         </div>
         <div class="row">
-            <form class="my-2" action="controler-microservice.php" method="POST" enctype="multipart/form-data">
+            <form class="my-2" action="controler-ms.php" method="POST" enctype="multipart/form-data">
 
                 <input type="hidden" name="id" value="<?= $id ?>" />
                 <input type="hidden" name="action" value="<?= $action ?>" />
@@ -70,9 +70,9 @@ if (!empty($id)) {
             </form>
 
             <?php if ($action != "CREATE") : ?>
-                <form class="" action="controler-microservice.php" method="POST">
+                <form class="" action="controler-ms.php" method="POST">
                     <input type="hidden" name="action" value="DELETE" />
-                    <input type="hidden" name="id" value="<?= $data['microservice_id'] ?>" />
+                    <input type="hidden" name="id" value="<?= $data['ms_id'] ?>" />
                     <button class="btn btn-danger" type="submit"><i class="bi bi-trash"></i> Supprimer</button>
                 </form>
             <?php endif ?>
